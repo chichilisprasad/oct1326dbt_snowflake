@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: RAW_DATA
+    database: WEGUIDE_DB
+    schema: RAW_DATA
+    tables:
+      - name: orders
+        columns:
+          - name: ORDER_ID
+            tests:
+              - not_null
+              - unique
+
+          - name: CUSTOMER_ID
+            tests:
+              - not_null  
+      - name: ORDER_ITEMS
+        columns:
+          - name: ORDER_ID
+            tests:
+              - not_null
+
+          - name: PRODUCT_ID
+            tests:
+              - not_null
+
+          - name: QUANTITY
+            tests:
+              - not_null
+
+       
